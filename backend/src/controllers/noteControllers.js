@@ -1,14 +1,28 @@
 import Note from "../model/Note.js"
 
-export async function getAllNotes (req, res) {
+export async function getAllNotes (_, res) {
     try {
-        const notes = await Note.find()
+        const notes = await Note.find().sort({createdAt: -1})// use 1 for ascending(old first) and -1 for descending order(new first)
         res.status(200).json(notes)
     } catch (error) {
         console.error("Error in getAllNotes controller",error)
         res.status(500).json({message: "Internal server error."})
     }
 
+}
+
+export async function getNoteById(req, res){
+    try{
+        const notes = await Note.findById(req.params.id)
+
+        if (!notes) return res.status(404).json({message: "Note not found"});
+        res.status(200).json(notes)
+        
+    }catch (error){
+        console.error("Error in getNoteById controller", error)
+        res.status(500).json({message:"Internal server error"})
+
+    }
 }
 
 export async function createNode (req, res) {
