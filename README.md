@@ -1,4 +1,4 @@
-# thinkboard
+# ThinkNote
 
 A MERN stack note-taking application.
 
