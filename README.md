@@ -1,6 +1,12 @@
 # ThinkNote
 
-A MERN stack note-taking application.
+A personal MERN note-taking app to capture, view, and manage notes quickly. Built as a practice project for full‑stack basics (API, persistence, routing, styling) with a simple, clean UI.
+
+## Tech
+
+- MongoDB, Express, Node for the API and persistence
+- React, Vite, Tailwind + DaisyUI for the frontend
+- Axios for API calls, react-router for navigation
 
 ## Setup
 
